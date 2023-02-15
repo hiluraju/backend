@@ -1,0 +1,11 @@
+
+> Student Mark System
+
+- Login Page 
+- CRUD Opertaion for Users
+- CRUD Opertaion for Studnet Name and Marks
+- Maximum marks = 100
+- Table and Chart View for Student Data
+- Logout Option
+- Login could be enabled via enter button also
+- Require Users to login at least once per 2 days
