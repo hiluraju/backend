@@ -1,10 +1,12 @@
 require('dotenv').config();
+require('express-async-errors');
 const express = require('express');
 const app = express();
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
+
 const connectDb = require('./config/dbConfig');
 const PORT = process.env.PORT || 3500;
 const {errorHandler,logEvents} = require('./middleware/errorHandler')
@@ -19,6 +21,10 @@ app.use(cookieParser());
 app.use(express.json())
 
 app.use('/',require('./routes/root'));
+
+app.use('/users',require('./routes/userRoutes'));
+
+app.use('/students',require('./routes/studentRoutes'));
 
 app.all('*',(req,res)=>
 {

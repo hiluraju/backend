@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const studentSchema = new mongoose.Schema(
     {
@@ -10,7 +11,9 @@ const studentSchema = new mongoose.Schema(
         marks : 
         {
             type : Number,
-            required : true
+            required : true,
+            min: 0,
+            max:100
         }
     },
     {
